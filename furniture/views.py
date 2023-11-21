@@ -11,3 +11,8 @@ def home(request):
 def shop(request, item_id):
     cart_item = furniture.objects.get(id=item_id)
     return render(request, 'shop.html', {'c_item': cart_item})
+
+
+def cart(request, cart_id):
+    crt_item = furniture.objects.get(id=cart_id)
+    return render(request, 'cart.html', {'item_id': crt_item})
